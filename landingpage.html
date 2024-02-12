@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Recycle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: aquamarine;
+            color: black;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        li, h1, ul {
+            display: inline;
+        }
+
+        li {
+            margin-right: 25px;
+            cursor: pointer;
+        }
+
+        ul {
+            margin-left: 35%;
+        }
+
+        li:hover {
+            color: gray;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .image {
+            height: 450px;
+            width: 100%;
+            position: relative;
+        }
+
+        .searchbar {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            width: 450px;
+            height: 60px;
+        }
+
+        input {
+            width: 80%;
+            padding: 15px;
+        }
+
+        button {
+            padding: 16px 20px;
+            background-color: orangered;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(243, 115, 68);
+        }
+
+        .textheading {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .textheading h1 {
+            font-weight: bold;
+        }
+
+        .textheading p {
+            margin-top: 20px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: justify;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center; 
+            margin-top: 40px;
+        }
+        
+        .circle-item {
+            margin: 0 20px;
+            text-align: center;
+        }
+        
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .circle img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        footer {
+            margin-top: 50px;
+            background-color: #000;
+            padding: 15px 0;
+            color: #FFF;
+        }
+
+
+
+        .footer-contact, .footer-social, .footer-bottom {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer-contact p {
+            margin: 5px 0;
+        }
+
+        .footer-social img {
+            margin: 0 10px;
+            filter: invert(100%);
+            width: 30px;   
+            height: 30px; 
+        }
+
+        .footer-bottom {
+            font-style: italic;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <nav>
+        <div class="logo-title-container">
+            <img src="https://w7.pngwing.com/pngs/196/533/png-transparent-environmentally-friendly-graphy-logo-environmental-protection-environment-friendly-label-trademark-grass.png" alt="Your Logo" class="logo" />
+            <h1>JUST RECYCLE</h1>
+        </div>
+        <ul>
+            <li> How it works </li>
+            <li> What we collect </li>
+            <li> About us </li>
+            <li> Login/Sign up </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="image">
+    <img src="https://www.ecotechrecycling.in/img/ewaste-recycle.jpg" alt="Recycle image" class="image"/>
+    <div class="searchbar">
+        <input placeholder="Enter your postcode">
+        <button>Next</button>
+    </div>
+</div>
+
+<div class="textheading">
+    <h1>How does Just recycle work??</h1>
+    <p>We offer a user-friendly platform for convenient e-waste disposal. Users can schedule doorstep pickups, choosing their preferred recycling hub.Even if their electronic devices are functional, we encourage disposal, as they'll be donated to those in need. Earn credit points based on device condition, promoting responsible recycling.</p>
+</div>
+
+<div class="circle-container">
+    <div class="circle-item">
+        <div class="circle">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/007/033/146/small/profile-icon-login-head-icon-vector.jpg" alt="Sign-up/Login">
+        </div>
+        <p>1.Sign-up/Login</p>
+    </div>
+    <div class="circle-item">
+        <div class="circle">
+            <img src="https://img.freepik.com/premium-vector/map-logo-location-vector_607588-10365.jpg?w=2000" alt="Location">
+        </div>
+        <p>2.Location</p>
+    </div>
+    <div class="circle-item">
+        <div class="circle">
+            <img src="https://www.melbourne.vic.gov.au/SiteCollectionImages/icon-recycle-landfill-bins-6x4.jpg" alt="Dispose/Donate">
+        </div>
+        <p>3.Dispose/Donate</p>
+    </div>
+    <div class="circle-item">
+        <div class="circle">
+            <img src="https://thumbs.dreamstime.com/b/shopping-bag-logo-design-icon-online-shop-symbol-vector-illustrations-discount-flat-sales-digital-commerce-store-simple-marketing-157881334.jpg" alt="Shopping">
+        </div>
+        <p>4.Shopping</p>
+    </div>
+</div>
+
+
+<footer>
+    <div class="footer-contact">
+        <p><strong>Contact:</strong> +91-76972 60260</p>
+        <p><strong>Email:</strong> contact@justrecycle.com</p>
+        <p><strong>Address:</strong> No.10/407, Gandhi Street, Besant Nagar, Chennai</p>
+    </div>
+    <div class="footer-social">
+        <a><img src="https://cdn.pixabay.com/photo/2016/08/09/17/52/instagram-1581266_640.jpg" alt="Instagram" class="footer-icon"></a>
+        <a><img src="https://1000logos.net/wp-content/uploads/2016/11/fb-logo.jpg" alt="Facebook" class="footer-icon"></a>
+        <a><img src="https://img.freepik.com/premium-vector/round-twitter-logo-isolated-white-background_469489-899.jpg" alt="Twitter" class="footer-icon"></a>
+        <a><img src="https://static.vecteezy.com/system/resources/thumbnails/018/910/721/small/linkedin-logo-linkedin-symbol-linkedin-icon-free-free-vector.jpg" alt="LinkedIn" class="footer-icon"></a>
+    </div>
+    <div class="footer-bottom">
+        <p>Made with ♥ in India, for the World</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
