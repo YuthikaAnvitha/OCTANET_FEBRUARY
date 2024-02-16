@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            background-color: #efd0d0;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #todo-list {
+            margin-top: 20px;
+        }
+
+        .todo-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .todo-item input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 8px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            background-color: transparent;
+            font-size: 16px;
+        }
+
+        .todo-item button {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        .todo-item button:hover {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> To-Do List </h1>
+        <div id="todo-list">
+        </div>
+        <div class="todo-item">
+            <input type="text" id="new-task" placeholder="Add new task">
+            <button onclick="addItem()">Add</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.forEach(function (taskText) {
+                addTaskToList(taskText);
+            });
+        }
+
+        function addTaskToList(taskText) {
+            var listItem = document.createElement("div");
+            listItem.classList.add("todo-item");
+            listItem.innerHTML = `
+                    <input type="checkbox">
+                    <span>${taskText}</span>
+                    <button onclick="removeItem(this)">Delete</button>
+                `;
+            document.getElementById("todo-list").appendChild(listItem);
+        }
+
+        function addItem() {
+            var taskInput = document.getElementById("new-task");
+            var taskText = taskInput.value.trim();
+            if (taskText !== "") {
+                addTaskToList(taskText);
+                saveTasksToLocalStorage(taskText);
+                taskInput.value = "";
+            }
+        }
+
+        function removeItem(item) {
+            var listItem = item.parentNode;
+            var taskText = listItem.querySelector("span").innerText;
+            listItem.parentNode.removeChild(listItem);
+            removeTaskFromLocalStorage(taskText);
+        }
+
+        function saveTasksToLocalStorage(taskText) {
+            var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.push(taskText);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function removeTaskFromLocalStorage(taskText) {
+            var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            var index = tasks.indexOf(taskText);
+            if (index !== -1) {
+                tasks.splice(index, 1);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            }
+        }
+    </script>
+</body>
+
+</html>
